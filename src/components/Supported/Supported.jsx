@@ -3,8 +3,20 @@ import { connect } from 'react-redux';
 
 class Supported extends Component {
 
+    state = {
+        item: '',
+    }
+
+    handleChange = (event) => {
+        //this sets the new state with what is typed and kept in local state
+        this.setState({
+            item: event.target.value
+        })
+    }
+
     handleClick = () => {
         //pushes us to Comments page
+        this.props.dispatch({ type: 'SUPPORTED', payload: this.state.item })
         this.props.history.push('/comments')
     }
     render() {

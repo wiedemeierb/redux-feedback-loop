@@ -2,9 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Comments extends Component {
+
+    state = {
+        item: '',
+    }
+
+    handleChange = (event) => {
+        //this sets the new state with what is typed and kept in local state
+        this.setState({
+            item: event.target.value
+        })
+    }
     
     handleClick = () => {
         //pushes us to Review page
+        this.props.dispatch({ type: 'COMMENTS', payload: this.state.item })
         this.props.history.push('/review')
     }
 

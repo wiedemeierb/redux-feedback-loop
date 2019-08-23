@@ -15,11 +15,35 @@ const feelingsReducer = (state = '', action) => {
     }
     return state;
 }
+//reducer for Understanding Component
+const understandingReducer = (state = '', action) => {
+    if (action.type === 'UNDERSTANDING') {
+        return action.payload
+    }
+    return state;
+}
+//reducer for Supported Component
+const supportedReducer = (state = '', action) => {
+    if (action.type === 'SUPPORTED') {
+        return action.payload
+    }
+    return state;
+}
+//reducer for Comments Component
+const commentsReducer = (state = '', action) => {
+    if (action.type === 'COMMENTS') {
+        return action.payload
+    }
+    return state;
+}
 
 
 const store = createStore(
     combineReducers({
         feelingsReducer,  
+        understandingReducer,
+        supportedReducer,
+        commentsReducer
     }),
     applyMiddleware(logger)
 )

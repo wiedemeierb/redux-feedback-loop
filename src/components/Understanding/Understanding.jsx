@@ -3,8 +3,20 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
 
+    state = {
+        item: '',
+    }
+
+    handleChange = (event) => {
+        //this sets the new state with what is typed and kept in local state
+        this.setState({
+            item: event.target.value
+        })
+    }
+
     handleClick = () => {
         //pushes us to Collection page
+        this.props.dispatch({ type: 'UNDERSTANDING', payload: this.state.item })
         this.props.history.push('/supported')
     }
 
