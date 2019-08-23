@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { HashRouter as Router, Route} from 'react-router-dom'
+import { connect } from 'react-redux'
 import './App.css';
 
 class App extends Component {
@@ -16,4 +18,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = store => {
+  return {
+    store
+  };
+};
+
+export default connect(mapStateToProps)(App);
