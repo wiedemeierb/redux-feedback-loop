@@ -8,6 +8,13 @@ class Review extends Component {
         //pushes us to Collection page
         this.props.history.push('/success')
     }
+    
+    //pizza-parlor is a decent example
+    //create local state to take in reducers info
+    //create function to set local state with reducers info
+    //display items on the DOM
+    //create POST to get data to database, and .history to move to success page
+    //POST needed with axios to get data to database
 
     render() {
         return (
