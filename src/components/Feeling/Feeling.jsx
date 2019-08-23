@@ -22,7 +22,7 @@ class Feeling extends Component {
     }
 
     render() {
-        // console.log(this.state)
+        console.log(this.state)
         return(
             <>
             <h2>How are you feeling today?</h2>
