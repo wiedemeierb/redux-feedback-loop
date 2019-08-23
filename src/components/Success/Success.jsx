@@ -11,7 +11,7 @@ class Success extends Component {
     render() {
         return (
             <>
-                <h2>SUCCESS -- THANK YOU FOR YOUR SUBMISSION -- PAGE</h2>
+                <h2>SUCCESS -- THANK YOU FOR YOUR SUBMISSION!!</h2>
                 <button onClick={this.handleClick}>NEXT</button>
             </>
         )

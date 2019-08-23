@@ -11,7 +11,8 @@ class Comments extends Component {
     render() {
         return (
             <>
-            <h2>COMMENTS PAGE</h2>
+            <h2>Any comments you want to leave?</h2>
+            <input onChange={this.handleChange} placeholder='Leave Comments Here' />
             <button onClick={this.handleClick}>NEXT</button>
             </>
         )

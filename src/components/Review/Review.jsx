@@ -11,7 +11,7 @@ class Review extends Component {
     render() {
         return (
             <>
-            <h2>REVIEW</h2>
+            <h2>Review Your Feedback</h2>
             <button onClick={this.handleClick}>SUBMIT</button>
             </>
         )

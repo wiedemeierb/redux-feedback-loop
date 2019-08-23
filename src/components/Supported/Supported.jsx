@@ -10,7 +10,8 @@ class Supported extends Component {
     render() {
         return (
             <>
-            <h2>SUPPORTED PAGE</h2>
+            <h2>How well are you being supported?</h2>
+            <input onChange={this.handleChange} placeholder='Supported Score Here' />
             <button onClick={this.handleClick}>NEXT</button>
             </>
         )

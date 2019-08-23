@@ -11,7 +11,8 @@ class Understanding extends Component {
     render() {
         return (
             <>
-            <h2>UNDERSTANDING PAGE</h2>
+            <h2>How well are you understanding the content?</h2>
+            <input onChange={this.handleChange} placeholder='Understanding Score Here' />
             <button onClick={this.handleClick}>NEXT</button>
             </>
         )
