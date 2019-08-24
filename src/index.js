@@ -7,7 +7,7 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import registerServiceWorker from './registerServiceWorker';
 
-
+//All reducers
 //reducer for Feelings Component
 const feelingsReducer = (state = '', action) => {
     if (action.type === 'FEELINGS') {
@@ -37,7 +37,7 @@ const commentsReducer = (state = '', action) => {
     return state;
 }
 
-
+//Reducers to store
 const store = createStore(
     combineReducers({
         feelingsReducer,  

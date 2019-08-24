@@ -10,6 +10,7 @@ import Understanding from '../Understanding/Understanding'
 import Success from '../Success/Success'
 import './App.css';
 
+//All Routes and URLs
 class App extends Component {
   render() {
     return (
@@ -32,6 +33,7 @@ class App extends Component {
   }
 }
 
+//Bring this to Redux props
 const mapStateToProps = store => {
   return {
     store

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 class Feeling extends Component {
-
+    //local state
     state = {
         item: '',
     }
 
     handleChange = (event) => {
-        //this sets the new state with what is typed and kept in local state
+        //this sets the new state with what is typed and keep in local state
         this.setState({
             item: event.target.value
         })
@@ -16,8 +16,9 @@ class Feeling extends Component {
     
     
     handleClick = () => {
-        //pushes us to Collection page
+        //dispatch to reducers
         this.props.dispatch({ type: 'FEELINGS', payload: this.state.item })
+        //pushes us to Collection page
         this.props.history.push('/understanding')
     }
 
@@ -25,6 +26,7 @@ class Feeling extends Component {
         console.log(this.state)
         return(
             <>
+            {/* text, inputs, buttons */}
             <h2>How are you feeling today?</h2>
             <input onChange={this.handleChange} placeholder='Feelings Score Here' />
             <button onClick={this.handleClick}>NEXT</button>
