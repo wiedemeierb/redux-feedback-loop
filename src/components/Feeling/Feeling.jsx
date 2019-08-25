@@ -28,7 +28,7 @@ class Feeling extends Component {
             <>
             {/* text, inputs, buttons */}
             <h2>How are you feeling today?</h2>
-            <input onChange={this.handleChange} placeholder='Feelings Score Here' />
+            <input onChange={this.handleChange} placeholder='1-5' />
             <button onClick={this.handleClick}>NEXT</button>
             </>
         )

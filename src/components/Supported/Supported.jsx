@@ -23,7 +23,7 @@ class Supported extends Component {
         return (
             <>
             <h2>How well are you being supported?</h2>
-            <input onChange={this.handleChange} placeholder='Supported Score Here' />
+            <input onChange={this.handleChange} placeholder='1-5' />
             <button onClick={this.handleClick}>NEXT</button>
             </>
         )

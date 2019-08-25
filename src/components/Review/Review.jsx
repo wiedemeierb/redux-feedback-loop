@@ -24,6 +24,23 @@ class Review extends Component {
         this.props.history.push('/success')
     }
 
+    addOrder = event => {
+        event.preventDefault();
+        console.log(this.state.order);
+        axios
+            .post('/api/review', this.state.order)
+            .then(response => {
+                this.props.dispatch({
+                    type: 'CLEAR_CART'
+                });
+                this.props.history.push('/');
+                console.log(response.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
+
     //create function to set local state with reducers info
     // feedbackReview = () => {
     //     console.log(this.state);
@@ -50,15 +67,19 @@ class Review extends Component {
             <h2>Review Your Feedback</h2>
             {/* display items on the DOM */}
             <div>
-                
+                <h3>Feelings Score</h3>
                 {this.state.item.feelings}
                 <br/>
+                <h3>Understanding Score</h3>
                 {this.state.item.understanding}
                 <br/>
+                <h3>Supported Score</h3>
                 {this.state.item.supported}
                 <br/>
+                <h3>Comments</h3>
                 {this.state.item.comments}
             </div>
+            <br/>
             <button onClick={this.handleClick}>SUBMIT</button>
             </>
         )
