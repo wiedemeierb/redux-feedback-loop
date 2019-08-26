@@ -16,22 +16,26 @@ class Review extends Component {
     //get info to display on page load
     componentDidMount() {
         // this.feedbackReview();
-        // this.createPizzaOrder();  
+        // this.createPizzaOrder(); 
+        this.addReview(); 
     }
 
-    handleClick = () => {
-        //pushes us to Collection page
-        this.props.history.push('/success')
-    }
+    // handleClick = () => {
+    //     //pushes us to Collection page
+    //     this.props.history.push('/success')
+    // }
 
     //create POST to get data to database, and .history to move to success page
     addReview = event => {
-        event.preventDefault();
+        
         console.log(this.state.item);
         axios
-            .post('/api/review', this.state.item)
+            .post('/api/review', this.props.store)
             .then(response => {
                 this.props.history.push('/success');
+                this.props.dispatch({
+                    type: 'COMMENTS'
+                })
                 console.log(response.data);
             })
             .catch(err => {
