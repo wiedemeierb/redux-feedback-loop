@@ -36,6 +36,7 @@ class Review extends Component {
                 this.props.dispatch({
                     type: 'COMMENTS'
                 })
+                
                 console.log(response.data);
             })
             .catch(err => {
