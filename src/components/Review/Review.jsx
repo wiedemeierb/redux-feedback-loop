@@ -31,9 +31,6 @@ class Review extends Component {
         axios
             .post('/api/review', this.state.item)
             .then(response => {
-                this.props.dispatch({
-                    type: 'CLEAR_CART'
-                });
                 this.props.history.push('/success');
                 console.log(response.data);
             })
@@ -77,7 +74,7 @@ class Review extends Component {
                 {this.state.item.comments}
             </div>
             <br/>
-                <button onClick={this.handleClick}>SUBMIT</button>
+                <button onClick={this.addReview}>SUBMIT</button>
             </>
         )
     }
