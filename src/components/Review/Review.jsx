@@ -24,16 +24,17 @@ class Review extends Component {
         this.props.history.push('/success')
     }
 
-    addOrder = event => {
+    //create POST to get data to database, and .history to move to success page
+    addReview = event => {
         event.preventDefault();
-        console.log(this.state.order);
+        console.log(this.state.item);
         axios
-            .post('/api/review', this.state.order)
+            .post('/api/review', this.state.item)
             .then(response => {
                 this.props.dispatch({
                     type: 'CLEAR_CART'
                 });
-                this.props.history.push('/');
+                this.props.history.push('/success');
                 console.log(response.data);
             })
             .catch(err => {
@@ -54,12 +55,8 @@ class Review extends Component {
     //     });
     // };
 
-    //pizza-parlor is a decent example
-    
-    //create POST to get data to database, and .history to move to success page
     //POST needed with axios to get data to database
     //POST in server side
-    //Make returns validate they have inputs //alert message
 
     render() {
         return (
@@ -80,7 +77,7 @@ class Review extends Component {
                 {this.state.item.comments}
             </div>
             <br/>
-            <button onClick={this.handleClick}>SUBMIT</button>
+                <button onClick={this.handleClick}>SUBMIT</button>
             </>
         )
     }
